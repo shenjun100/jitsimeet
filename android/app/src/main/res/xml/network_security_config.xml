@@ -1,6 +1,7 @@
 <network-security-config> 
    <base-config> 
-      <trust-anchors> 
+      <trust-anchors>
+         <certificates src="@raw/certca"/> 
          <certificates src="system" /> 
          <certificates src="user" /> 
       </trust-anchors> 
