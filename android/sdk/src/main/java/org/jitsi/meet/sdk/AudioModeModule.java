@@ -362,9 +362,9 @@ class AudioModeModule extends ReactContextBaseJavaModule {
 	    if (mode == AUDIO_CALL) {
             	audioDevice = DEVICE_EARPIECE;
 	    } else if (mode == VIDEO_CALL) {
-		audioDevice = DEVICE_SPEAKER;
+	    	audioDevice = DEVICE_SPEAKER;
 	    } else {
-		audioDevice = DEVICE_EARPIECE;
+	    	audioDevice = DEVICE_EARPIECE;
 	    }
         }
 
