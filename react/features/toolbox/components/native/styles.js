@@ -62,7 +62,9 @@ const styles = {
      */
     toolbox: {
         alignItems: 'center',
-        backgroundColor: ColorPalette.darkBackground,
+        //backgroundColor: ColorPalette.darkBackground,
+	//SJ: change toolbox color to dark blue
+	backgroundColor: '#0D47A1',
         borderTopLeftRadius: 3,
         borderTopRightRadius: 3,
         flexDirection: 'row',

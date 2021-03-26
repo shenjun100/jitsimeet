@@ -108,9 +108,13 @@ export default {
     },
 
     roomTimerView: {
-        backgroundColor: 'rgba(0,0,0,0.8)',
+        //backgroundColor: 'rgba(0,0,0,0.8)',
+	//SJ: change Timer view color to dark blue and added border radius
+	backgroundColor: 'rgba(13,71,161,0.8)',
         borderBottomRightRadius: 3,
+	borderBottomLeftRadius: 3,
         borderTopRightRadius: 3,
+	borderTopLeftRadius: 3,
         height: 28,
         justifyContent: 'center',
         paddingHorizontal: 10
@@ -123,8 +127,12 @@ export default {
     },
 
     roomNameView: {
-        backgroundColor: 'rgba(0,0,0,0.6)',
+        //backgroundColor: 'rgba(0,0,0,0.6)',
+	//SJ: change room name view color to transparent and added border radius
+	backgroundColor: 'transparent',
+	borderBottomRightRadius: 3,
         borderBottomLeftRadius: 3,
+	borderTopRightRadius: 3,
         borderTopLeftRadius: 3,
         height: 28,
         justifyContent: 'center',
@@ -141,7 +149,8 @@ export default {
 
     roomNameWrapper: {
         alignItems: 'center',
-        flexDirection: 'row'
+	//SJ: change room name and timer to column placing
+        flexDirection: 'column'
     },
 
     /**
