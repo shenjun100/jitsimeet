@@ -3,7 +3,7 @@
 import React from 'react';
 
 import { translate } from '../../base/i18n';
-import { CircularLabel } from '../../base/label';
+import { Label } from '../../base/label';
 import { connect } from '../../base/redux';
 import { combineStyles, type StyleType } from '../../base/styles';
 
@@ -45,6 +45,7 @@ class VideoQualityLabel extends AbstractVideoQualityLabel<Props> {
             return null;
         }
 
+<<<<<<< HEAD
         //return (
         //    <CircularLabel
         //        label = { t('videoStatus.audioOnly') }
@@ -55,6 +56,13 @@ class VideoQualityLabel extends AbstractVideoQualityLabel<Props> {
 
         //SJ: remove video quality indicator
         return null;
+=======
+        return (
+            <Label
+                style = { combineStyles(styles.indicatorAudioOnly, style) }
+                text = { t('videoStatus.audioOnly') } />
+        );
+>>>>>>> 6c4652e3a0fc36b18ef17984a8fc5dd0dabfc90e
     }
 }
 

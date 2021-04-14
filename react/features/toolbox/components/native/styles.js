@@ -81,7 +81,7 @@ const styles = {
         flexDirection: 'column',
         flexGrow: 0,
         width: '100%',
-        maxWidth: 500,
+        maxWidth: 580,
         marginLeft: 'auto',
         marginRight: 'auto'
     }
