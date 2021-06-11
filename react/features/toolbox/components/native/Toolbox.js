@@ -93,8 +93,8 @@ function Toolbox(props: Props) {
                           toggledStyles = { backgroundToggledStyle } />}
                 {additionalButtons.has('tileview') && <TileViewButton styles = { buttonStylesBorderless } />}
                 {additionalButtons.has('invite') && <InviteButton styles = { buttonStylesBorderless } />}
-		{additionalButtons.has('togglecamera') && <AudioRouteButton styles = { buttonStylesBorderless } />}
-                //{additionalButtons.has('togglecamera') && <ToggleCameraButton styles = { buttonStylesBorderless } toggledStyles = { backgroundToggledStyle } />}
+		//{additionalButtons.has('togglecamera') && <AudioRouteButton styles = { buttonStylesBorderless } />}
+                {additionalButtons.has('togglecamera') && <ToggleCameraButton styles = { buttonStylesBorderless } toggledStyles = { backgroundToggledStyle } />}
                 <OverflowMenuButton
                     styles = { buttonStylesBorderless }
                     toggledStyles = { toggledButtonStyles } />
