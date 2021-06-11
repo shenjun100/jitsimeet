@@ -97,7 +97,6 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                 <Preview
                     videoMuted = { videoMuted }
                     videoTrack = { videoTrack } />
-                {!videoMuted && <div className = 'preview-overlay' />}
                 <div className = 'content'>
                     {showAvatar && videoMuted && (
                         <Avatar
@@ -109,9 +108,9 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                     )}
                     {showConferenceInfo && (
                         <>
-                            <div className = 'title'>
+                            <h1 className = 'title'>
                                 { title }
-                            </div>
+                            </h1>
                             {showSharingButton ? <CopyMeetingUrl /> : null}
                         </>
                     )}
