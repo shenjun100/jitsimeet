@@ -51,6 +51,9 @@ type Props = {
  *
  * @param {Object} props - The props of the component.
  * @returns {React$Element}.
+ * <OverflowMenuButton 
+ *     styles = { buttonStylesBorderless } 
+ *     toggledStyles = { toggledButtonStyles } />
  */
 function Toolbox(props: Props) {
     if (!props._visible) {
@@ -93,11 +96,11 @@ function Toolbox(props: Props) {
                           toggledStyles = { backgroundToggledStyle } />}
                 {additionalButtons.has('tileview') && <TileViewButton styles = { buttonStylesBorderless } />}
                 {additionalButtons.has('invite') && <InviteButton styles = { buttonStylesBorderless } />}
-		//{additionalButtons.has('togglecamera') && <AudioRouteButton styles = { buttonStylesBorderless } />}
-                {additionalButtons.has('togglecamera') && <ToggleCameraButton styles = { buttonStylesBorderless } toggledStyles = { backgroundToggledStyle } />}
-                <OverflowMenuButton
-                    styles = { buttonStylesBorderless }
-                    toggledStyles = { toggledButtonStyles } />
+                {additionalButtons.has('togglecamera') 
+                     && <ToggleCameraButton styles = { buttonStylesBorderless } 
+                        toggledStyles = { backgroundToggledStyle } />}
+                <AudioRouteButton 
+                    styles = { buttonStylesBorderless } />
                 <HangupButton
                     styles = { hangupButtonStyles } />
             </SafeAreaView>

@@ -127,8 +127,9 @@ export default {
     roomNameWrapper: {
         alignItems: 'center',
 	//SJ: change room name and timer to column placing
-        flexDirection: 'column'
+        flexDirection: 'column',
         //flexDirection: 'row'
+	marginTop: 32 
     },
 
     /**
