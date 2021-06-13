@@ -112,6 +112,31 @@ class OverflowMenu extends PureComponent<Props, State> {
      *
      * @inheritdoc
      * @returns {ReactElement}
+     *
+     *<BottomSheet
+     *           onCancel = { this._onCancel }
+     *           onSwipe = { this._onSwipe }
+     *           renderHeader = { this._renderMenuExpandToggle }>
+     *           <AudioRouteButton { ...buttonProps } />
+     *           {!toolbarButtons.has('invite') && <InviteButton { ...buttonProps } />}
+     *           <AudioOnlyButton { ...buttonProps } />
+     *           {!toolbarButtons.has('raisehand') && <RaiseHandButton { ...buttonProps } />}
+     *           <SecurityDialogButton { ...buttonProps } />
+     *           <ScreenSharingButton { ...buttonProps } />
+     *           <MoreOptionsButton { ...moreOptionsButtonProps } />
+     *           <Collapsible collapsed = { !showMore }>
+     *               {!toolbarButtons.has('togglecamera') && <ToggleCameraButton { ...buttonProps } />}
+     *               {!toolbarButtons.has('tileview') && <TileViewButton { ...buttonProps } />}
+     *               <RecordButton { ...buttonProps } />
+     *               <LiveStreamButton { ...buttonProps } />
+     *               <SharedVideoButton { ...buttonProps } />
+     *               <ClosedCaptionButton { ...buttonProps } />
+     *               <SharedDocumentButton { ...buttonProps } />
+     *               <MuteEveryoneButton { ...buttonProps } />
+     *               <MuteEveryonesVideoButton { ...buttonProps } />
+     *               <HelpButton { ...buttonProps } />
+     *           </Collapsible>
+     *       </BottomSheet>
      */
     render() {
         const { _bottomSheetStyles, _width } = this.props;

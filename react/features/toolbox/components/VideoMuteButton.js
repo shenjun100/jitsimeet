@@ -20,6 +20,7 @@ import { AbstractVideoMuteButton } from '../../base/toolbox/components';
 import type { AbstractButtonProps } from '../../base/toolbox/components';
 import { getLocalVideoType, isLocalCameraTrackMuted } from '../../base/tracks';
 import { isVideoMuteButtonDisabled } from '../functions';
+import { setTileView } from '../../video-layout/actions';
 
 declare var APP: Object;
 
@@ -166,6 +167,9 @@ class VideoMuteButton extends AbstractVideoMuteButton<Props, *> {
                 mediaType,
                 VIDEO_MUTISM_AUTHORITY.USER,
                 /* ensureTrack */ true));
+
+        //SJ: enable or disable tileview with video button
+        this.props.dispatch(setTileView(!videoMuted));
 
         // FIXME: The old conference logic still relies on this event being
         // emitted.
