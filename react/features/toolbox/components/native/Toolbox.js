@@ -20,6 +20,7 @@ import RaiseHandButton from './RaiseHandButton';
 import ToggleCameraButton from './ToggleCameraButton';
 import styles from './styles';
 
+
 /**
  * The type of {@link Toolbox}'s React {@code Component} props.
  */

@@ -155,10 +155,11 @@ class VideoMuteButton extends AbstractVideoMuteButton<Props, *> {
      */
     _setVideoMuted(videoMuted: boolean) {
         sendAnalytics(createToolbarEvent(VIDEO_MUTE, { enable: videoMuted }));
-        if (this.props._audioOnly) {
-            this.props.dispatch(
-                setAudioOnly(false, /* ensureTrack */ true));
-        }
+        //if (this.props._audioOnly) {
+            //this.props.dispatch(setAudioOnly(false, /* ensureTrack */ true));
+	    this.props.dispatch(setAudioOnly(videoMuted, /* ensureTrack */ !videoMuted));
+        //}
+       
         const mediaType = this.props._videoMediaType;
 
         this.props.dispatch(
@@ -171,6 +172,7 @@ class VideoMuteButton extends AbstractVideoMuteButton<Props, *> {
         //SJ: enable or disable tileview with video button
         this.props.dispatch(setTileView(!videoMuted));
 
+        
         // FIXME: The old conference logic still relies on this event being
         // emitted.
         typeof APP === 'undefined'

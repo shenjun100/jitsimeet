@@ -31,6 +31,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.module.annotations.ReactModule;
 
 import org.jitsi.meet.sdk.log.JitsiMeetLogger;
+import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -57,6 +58,8 @@ import java.util.concurrent.Executors;
 @ReactModule(name = AudioModeModule.NAME)
 class AudioModeModule extends ReactContextBaseJavaModule {
     public static final String NAME = "AudioMode";
+
+    public static JitsiMeetConferenceOptions options;
 
     /**
      * Constants representing the audio mode.
@@ -360,11 +363,16 @@ class AudioModeModule extends ReactContextBaseJavaModule {
 
             //SJ: force earpiece by default for audio call
             if (mode == AUDIO_CALL) {
-               audioDevice = DEVICE_EARPIECE;
+                audioDevice = DEVICE_EARPIECE;
             } else if (mode == VIDEO_CALL) {
-               audioDevice = DEVICE_SPEAKER;
+                if (options.getVideoMuted() == true) {
+			audioDevice = DEVICE_EARPIECE;
+			options = new JitsiMeetConferenceOptions.Builder().setVideoMuted(false).build();
+		} else {
+               		audioDevice = DEVICE_SPEAKER;
+		}
             } else {
-               audioDevice = DEVICE_EARPIECE;
+               	audioDevice = DEVICE_EARPIECE;
             }
         }
 
