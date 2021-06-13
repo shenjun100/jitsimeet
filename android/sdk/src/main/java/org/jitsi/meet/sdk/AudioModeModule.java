@@ -356,7 +356,16 @@ class AudioModeModule extends ReactContextBaseJavaModule {
         } else if (headsetAvailable) {
             audioDevice = DEVICE_HEADPHONES;
         } else {
-            audioDevice = DEVICE_SPEAKER;
+            //audioDevice = DEVICE_SPEAKER;
+
+            //SJ: force earpiece by default for audio call
+            if (mode == AUDIO_CALL) {
+               audioDevice = DEVICE_EARPIECE;
+            } else if (mode == VIDEO_CALL) {
+               audioDevice = DEVICE_SPEAKER;
+            } else {
+               audioDevice = DEVICE_EARPIECE;
+            }
         }
 
         // Consider the user's selection

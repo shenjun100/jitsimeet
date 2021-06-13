@@ -9,6 +9,7 @@ import { StyleType } from '../../../base/styles';
 import { ChatButton } from '../../../chat';
 import { InviteButton } from '../../../invite';
 import { TileViewButton } from '../../../video-layout';
+import { AudioRouteButton } from '../../../mobile/audio-mode';
 import { isToolboxVisible, getMovableButtons } from '../../functions.native';
 import AudioMuteButton from '../AudioMuteButton';
 import HangupButton from '../HangupButton';
@@ -50,6 +51,10 @@ type Props = {
  *
  * @param {Object} props - The props of the component.
  * @returns {React$Element}.
+ * SJ: replace overflowMenuButton to audioRouteButton
+ * <OverflowMenuButton 
+ *     styles = { buttonStylesBorderless } 
+ *     toggledStyles = { toggledButtonStyles } />
  */
 function Toolbox(props: Props) {
     if (!props._visible) {
@@ -96,9 +101,8 @@ function Toolbox(props: Props) {
                       && <ToggleCameraButton
                           styles = { buttonStylesBorderless }
                           toggledStyles = { backgroundToggledStyle } />}
-                <OverflowMenuButton
-                    styles = { buttonStylesBorderless }
-                    toggledStyles = { toggledButtonStyles } />
+                <AudioRouteButton 
+                    styles = { buttonStylesBorderless } />
                 <HangupButton
                     styles = { hangupButtonStyles } />
             </SafeAreaView>

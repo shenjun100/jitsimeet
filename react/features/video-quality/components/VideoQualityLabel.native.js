@@ -45,11 +45,14 @@ class VideoQualityLabel extends AbstractVideoQualityLabel<Props> {
             return null;
         }
 
-        return (
-            <Label
-                style = { combineStyles(styles.indicatorAudioOnly, style) }
-                text = { t('videoStatus.audioOnly') } />
-        );
+        //return (
+        //    <Label
+        //        style = { combineStyles(styles.indicatorAudioOnly, style) }
+        //        text = { t('videoStatus.audioOnly') } />
+        //);
+
+        //SJ: remove video quality indicator
+        return null;
     }
 }
 

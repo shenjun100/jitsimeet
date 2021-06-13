@@ -25,7 +25,10 @@ export default {
     },
     'Conference': {
         inviteButtonBackground: 'rgb(0, 119, 225)',
-        onVideoText: 'white'
+        //onVideoText: 'white'
+        
+        //SJ: change lonely text to black
+        onVideoText: 'black'
     },
     'Dialog': {
         border: 'rgba(0, 3, 6, 0.6)',
@@ -41,7 +44,10 @@ export default {
     },
     'Modal': {},
     'LargeVideo': {
-        background: '#040404'
+        //background: '#040404'
+
+        //SJ: change background to white
+        background: '#FFFFFF'
     },
     'LoadConfigOverlay': {
         background: 'rgb(249, 249, 249)'
