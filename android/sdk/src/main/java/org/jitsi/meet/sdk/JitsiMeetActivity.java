@@ -57,6 +57,8 @@ public class JitsiMeetActivity extends FragmentActivity
 
     public static void launch(Context context, JitsiMeetConferenceOptions options) {
 
+        //AudioModeModule.options = options;
+        AudioModeModule.INIT_FLAG = 1;
         AudioModeModule.options = options;
 
         Intent intent = new Intent(context, JitsiMeetActivity.class);

@@ -60,6 +60,7 @@ class AudioModeModule extends ReactContextBaseJavaModule {
     public static final String NAME = "AudioMode";
 
     public static JitsiMeetConferenceOptions options;
+    public static int INIT_FLAG = 0;
 
     /**
      * Constants representing the audio mode.
@@ -365,9 +366,9 @@ class AudioModeModule extends ReactContextBaseJavaModule {
             if (mode == AUDIO_CALL) {
                 audioDevice = DEVICE_EARPIECE;
             } else if (mode == VIDEO_CALL) {
-                if (options.getVideoMuted() == true) {
+                if (INIT_FLAG == 1 && options.getVideoMuted() == true) {
 			audioDevice = DEVICE_EARPIECE;
-			options = new JitsiMeetConferenceOptions.Builder().setVideoMuted(false).build();
+			//options = new JitsiMeetConferenceOptions.Builder().setVideoMuted(false).build();
 		} else {
                		audioDevice = DEVICE_SPEAKER;
 		}
@@ -375,6 +376,8 @@ class AudioModeModule extends ReactContextBaseJavaModule {
                	audioDevice = DEVICE_EARPIECE;
             }
         }
+
+        INIT_FLAG = 0;
 
         // Consider the user's selection
         if (userSelectedDevice != null && availableDevices.contains(userSelectedDevice)) {

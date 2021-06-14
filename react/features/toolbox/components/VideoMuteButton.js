@@ -1,5 +1,6 @@
 // @flow
 
+import { NativeModules } from 'react-native';
 import UIEvents from '../../../../service/UI/UIEvents';
 import {
     ACTION_SHORTCUT_TRIGGERED,
@@ -21,6 +22,8 @@ import type { AbstractButtonProps } from '../../base/toolbox/components';
 import { getLocalVideoType, isLocalCameraTrackMuted } from '../../base/tracks';
 import { isVideoMuteButtonDisabled } from '../functions';
 import { setTileView } from '../../video-layout/actions';
+
+const { AudioMode } = NativeModules;
 
 declare var APP: Object;
 
@@ -155,6 +158,11 @@ class VideoMuteButton extends AbstractVideoMuteButton<Props, *> {
      */
     _setVideoMuted(videoMuted: boolean) {
         sendAnalytics(createToolbarEvent(VIDEO_MUTE, { enable: videoMuted }));
+
+        if (this.props._audioOnly == false && videoMuted == false) {
+        	AudioMode.setMode(AudioMode.VIDEO_CALL);
+        }
+        
         //if (this.props._audioOnly) {
             //this.props.dispatch(setAudioOnly(false, /* ensureTrack */ true));
 	    this.props.dispatch(setAudioOnly(videoMuted, /* ensureTrack */ !videoMuted));
