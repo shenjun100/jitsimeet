@@ -59,6 +59,7 @@ import java.util.concurrent.Executors;
 class AudioModeModule extends ReactContextBaseJavaModule {
     public static final String NAME = "AudioMode";
 
+    //SJ: declare init flag and options
     public static JitsiMeetConferenceOptions options;
     public static int INIT_FLAG = 0;
 
@@ -362,13 +363,12 @@ class AudioModeModule extends ReactContextBaseJavaModule {
         } else {
             //audioDevice = DEVICE_SPEAKER;
 
-            //SJ: force earpiece by default for audio call
+            //SJ: force earpiece by default for audio and muted video call
             if (mode == AUDIO_CALL) {
                 audioDevice = DEVICE_EARPIECE;
             } else if (mode == VIDEO_CALL) {
                 if (INIT_FLAG == 1 && options.getVideoMuted() == true) {
 			audioDevice = DEVICE_EARPIECE;
-			//options = new JitsiMeetConferenceOptions.Builder().setVideoMuted(false).build();
 		} else {
                		audioDevice = DEVICE_SPEAKER;
 		}
@@ -377,6 +377,7 @@ class AudioModeModule extends ReactContextBaseJavaModule {
             }
         }
 
+	//SJ: reset init flag
         INIT_FLAG = 0;
 
         // Consider the user's selection

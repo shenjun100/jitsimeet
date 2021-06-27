@@ -57,7 +57,7 @@ public class JitsiMeetActivity extends FragmentActivity
 
     public static void launch(Context context, JitsiMeetConferenceOptions options) {
 
-        //AudioModeModule.options = options;
+        //SJ: set init flag and options
         AudioModeModule.INIT_FLAG = 1;
         AudioModeModule.options = options;
 

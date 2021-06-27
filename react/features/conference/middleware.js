@@ -29,7 +29,7 @@ MiddlewareRegistry.register(store => next => action => {
 
         dispatch(setToolboxEnabled(!reducedUI));
         dispatch(setFilmstripEnabled(!reducedUI));
-
+        
         break;
     }
 
